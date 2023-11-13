@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/style.css" rel="stylesheet" />
+    <title>3D Charts</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="800" height="500"></canvas>
+    <div class="chart-manager">
+      <select id="chart-type">
+        <option value="0">BAR</option>
+        <option value="1">POINT</option>
+        <option value="2">CYLINDER</option>
+        <option value="3">CONE</option>
+        <option value="4">LINE</option>
+      </select>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
