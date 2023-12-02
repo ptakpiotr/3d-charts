@@ -3,4 +3,28 @@ body {
   padding: 0;
   overflow: hidden;
   background-color: #000;
+  color: whitesmoke;
+  cursor: crosshair;
+}
+
+.chart-manager {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 30vh;
+}
+
+.chart-manager > div {
+  display: flex;
+  column-gap: 1rem;
+}
+
+#generate-btn {
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  background-color: whitesmoke;
+}
+
+#generate-btn:hover {
+  cursor: pointer;
 }

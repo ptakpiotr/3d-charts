@@ -9,13 +9,27 @@
   <body>
     <canvas id="canvas" width="800" height="500"></canvas>
     <div class="chart-manager">
-      <select id="chart-type">
-        <option value="0">BAR</option>
-        <option value="1">POINT</option>
-        <option value="2">CYLINDER</option>
-        <option value="3">CONE</option>
-        <option value="4">LINE</option>
-      </select>
+      <div>
+        <select id="chart-type">
+          <option value="0">LINE</option>
+          <option value="1">POINT</option>
+          <option value="2">CYLINDER</option>
+          <option value="3">CONE</option>
+          <option value="4">BAR</option>
+        </select>
+        <input id="material-color" type="color" />
+      </div>
+      <div>
+        <span>
+          <label for="y-value">Y value: </label>
+          <input type="range" name="y-value" id="y-value" min="0" max="100" />
+        </span>
+        <span>
+          <label for="x-value">X value: </label>
+          <input type="range" name="x-value" id="x-value" min="0" max="10000" />
+        </span>
+        <button id="generate-btn">Generate</button>
+      </div>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>

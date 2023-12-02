@@ -30,12 +30,6 @@ export const _scaleFloat = (
   return ((number - inMin) / (inMax - inMin)) * (outMax - outMin) + outMin;
 };
 
-export const heatMapColorforValue = (value: number) => {
-  const h = (1.0 - value / 10.0) * 240; // Hue (0 to 240)
-
-  return `hsl(${h}, 100%, 50%)`;
-};
-
 export const renderValues = (
   scene: THREE.Scene,
   values: IValues[],

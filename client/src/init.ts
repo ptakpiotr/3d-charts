@@ -84,7 +84,12 @@ export const initCharts = async (
   values: IValues[],
   chartSetup: IChartSetup
 ) => {
-  const { camera, controls, scene, sizes } = await init(values, chartSetup);
+  const sortedValues = values.toSorted((a, b) => (a.x < b.x ? -1 : 1));
+
+  const { camera, controls, scene, sizes } = await init(
+    sortedValues,
+    chartSetup
+  );
 
   render({ camera, controls, scene, sizes });
 };

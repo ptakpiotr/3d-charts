@@ -1,17 +1,11 @@
 import * as THREE from "three";
-import { _scaleFloat, heatMapColorforValue } from "./globals";
+import { _scaleFloat } from "./globals";
 import { IChartSetup, IValues } from "./Types";
 
 export let valueMaterial: THREE.LineBasicMaterial | THREE.MeshPhongMaterial =
   new THREE.LineBasicMaterial({
     color: 0x00ffff,
   });
-
-export const setValueMaterial = (
-  material: THREE.LineBasicMaterial | THREE.MeshPhongMaterial
-) => {
-  valueMaterial = material;
-};
 
 export const renderBarChart = (values: IValues[], chartSetup: IChartSetup) => {
   const chartValues: THREE.Mesh[] = [];
@@ -30,8 +24,6 @@ export const renderBarChart = (values: IValues[], chartSetup: IChartSetup) => {
     );
 
     const box = new THREE.BoxGeometry(0.5, scaledY, 1, 1, 1, 1);
-
-    valueMaterial.color = new THREE.Color(heatMapColorforValue(scaledY));
 
     const mesh = new THREE.Mesh(box, valueMaterial);
 
@@ -65,8 +57,6 @@ export const renderPointChart = (
 
     const sphere = new THREE.SphereGeometry(0.1, 64, 64);
 
-    valueMaterial.color = new THREE.Color(heatMapColorforValue(scaledY));
-
     const mesh = new THREE.Mesh(sphere, valueMaterial);
 
     mesh.position.x = scaledX;
@@ -99,8 +89,6 @@ export const renderCylinderChart = (
 
     const cylinder = new THREE.CylinderGeometry(0.1, 0.1, scaledY);
 
-    valueMaterial.color = new THREE.Color(heatMapColorforValue(scaledY));
-
     const mesh = new THREE.Mesh(cylinder, valueMaterial);
 
     mesh.position.x = scaledX;
@@ -129,9 +117,6 @@ export const renderConeChart = (values: IValues[], chartSetup: IChartSetup) => {
     );
 
     const cone = new THREE.ConeGeometry(0.1, scaledY, 64, 64);
-
-    valueMaterial.color = new THREE.Color(heatMapColorforValue(scaledY));
-
     const mesh = new THREE.Mesh(cone, valueMaterial);
 
     mesh.position.x = scaledX;

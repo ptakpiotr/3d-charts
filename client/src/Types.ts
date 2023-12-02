@@ -28,11 +28,11 @@ export interface IChartSetup {
 }
 
 export enum ChartType {
-  BAR,
+  LINE,
   POINT,
   CYLINDER,
   CONE,
-  LINE,
+  BAR,
 }
 
 export interface IValues {
